@@ -56,16 +56,22 @@
         <table class="table table-bordered table-hover">
                 <tr class="thead-light">
                     <th class="text-nowrap">やること</th>
-                    <th class="text-nowrap">現在のステータス</th>
-                    <th class="text-nowrap">
                     <form method="get" action="{{ url('/task_apps')}}" id="submit_form">
-                        <select name="sort" class="text">
-                            <option value="">締め切り期限</option>
-                            <option value="asc">昇順</option>
-                            <option value="desc">降順</option>
-                        </select>
+                        <th class="text-nowrap">
+                            <select name="status" class="text">
+                                <option value="">現在のステータス</option>
+                                <option value="in">着手中を上へ</option>
+                                <option value="out">未着手を上へ</option>
+                            </select>
+                        </th>
+                        <th class="text-nowrap">
+                            <select name="sort" class="text">
+                                <option value="">締め切り期限</option>
+                                <option value="asc">昇順</option>
+                                <option value="desc">降順</option>
+                            </select>
+                        </th>
                     </form>
-                    </th>
                     <th class="text-nowrap">終わったら</th>
                 </tr>
                 @forelse($task_apps as $task_app)
