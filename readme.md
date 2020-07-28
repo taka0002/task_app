@@ -2,7 +2,7 @@ To doリストアプリ
 
 Laravelを使用して、日々のtodoを管理するアプリを作成しました。
 
-![スクリーンショット 2020-07-26 20 47 55](https://user-images.githubusercontent.com/63849657/88478395-d2597e80-cf82-11ea-8e30-f67ef9c344fe.png)
+![スクリーンショット 2020-07-28 20 42 59](https://user-images.githubusercontent.com/63849657/88661112-f3e97000-d112-11ea-8300-5afbd6973fdd.png)
 
 【こだわった点】
 - やることリストをその場編集できる
