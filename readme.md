@@ -25,4 +25,6 @@ Laravelを使用して、日々のtodoを管理するアプリを作成しまし
 
 - それぞれのタスクは、削除ボタンから削除可能
 
+![タイトルなし](https://user-images.githubusercontent.com/63849657/88668331-71b27900-d11d-11ea-80bc-3b774565e5b5.gif)
+
 【使用言語など】 HTML/CSS、JavaScript、jQuery、PHP、MySQL、Laravel、GitHub、Docker
