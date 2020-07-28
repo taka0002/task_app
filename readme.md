@@ -20,6 +20,9 @@ Laravelを使用して、日々のtodoを管理するアプリを作成しまし
 ![タイトルなし](https://user-images.githubusercontent.com/63849657/88667522-7296db00-d11c-11ea-9796-0a7158383d1a.gif)
 
 - それぞれの締め切り期限の日にちをクリックすると、その場で締め切り日の変更が可能。変更ボタンを押すとpostされて変更可能
+
+![タイトルなし](https://user-images.githubusercontent.com/63849657/88667943-f18c1380-d11c-11ea-8986-e84c69d9e26b.gif)
+
 - それぞれのタスクは、削除ボタンから削除可能
 
 【使用言語など】 HTML/CSS、JavaScript、jQuery、PHP、MySQL、Laravel、GitHub、Docker
