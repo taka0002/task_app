@@ -13,9 +13,11 @@
         h1 {
             text-align: center;
             margin:20px 0;
+            font-style:italic;
         }
         .username {
             font-size:24px;
+            font-style:italic;
         }
         table {
             text-align:center;
@@ -65,9 +67,14 @@
         th select:focus {
             outline: none;
         }
+        .no_list {
+            list-style: none;
+            font-weight: bold;
+            margin:10px 0;
+        }
     </style>
     <script>
-        jQuery(function($){
+        $(function(){
             $('div.text').click(function(){
                 if(!$(this).hasClass('on')){
                     $(this).addClass('on');
@@ -81,9 +88,10 @@
                     };
                     //編集が終わったらtextで置き換える
                     $(this).parent().removeClass('on').text(inputVal);
-            });
+                    });
                 };
             });
+
             $('.date').click(function(){
                 if(!$(this).hasClass('on')){
                     $(this).addClass('on');
@@ -95,16 +103,24 @@
                     if(inputVal===''){
                         inputVal = this.defaultValue;
                     };
-            });
+                    });
                 };
             });
-        });
-    </script>
-    <script type="text/javascript">
-        $(function(){
-        $(".text").change(function(){
-            $("#submit_form").submit();
-        });
+
+            $('.delete').click(function(){
+            if(confirm('本当に削除しますか？いいんですね？タスク完了してなかったら減給ですよ？')){
+                    /* キャンセルの時の処理 */
+                    location.href = './index_task_app.blade.php';
+                }else{
+                    /*　OKの時の処理 */
+                    return false;
+                }
+            });
+
+            $(".text").change(function(){
+                $("#submit_form").submit();
+            });
+            
         });
     </script>
 </head>

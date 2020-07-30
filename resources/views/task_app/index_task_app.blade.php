@@ -4,8 +4,8 @@
 
 @section('content')
 <div class="container">
-    <h1>{{ $title }}</h1>
-    <p class="username">現在のユーザー名: <span>{{ Auth::user()->name }}</span></p>
+    <h1 class="text-primary">{{ $title }}</h1>
+    <p class="username text-center">現在のユーザー名: <span>{{ Auth::user()->name }}</span></p>
     <form action="{{ url('/logout') }}" method="post" class="post">
         {{ csrf_field() }}
         <button type="submit" class="btn btn-primary">ログアウト</button>
@@ -117,13 +117,13 @@
                     <form method="post" action="{{ url('/task_apps')}}">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
-                    <input type="submit" value="削除" class="btn btn-primary">
+                    <input type="submit" value="削除" class="btn btn-primary delete">
                     <input type="hidden" name="id" value="{{ $task_app->id }}">
                     </form>
                     </td>
                 </tr>
             @empty
-                <li>リストがありません。</li>
+                <li class="no_list">リストがありません。</li>
             @endforelse
         </table>
     </div>
