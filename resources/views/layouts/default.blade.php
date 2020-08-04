@@ -34,8 +34,7 @@
         }
         .status {
             border-radius: 5px;
-            padding: 0 5px 3px;
-            margin-right: 3px;
+            padding: 0 10px 3px;
         }
         .table-bordered td {
             vertical-align: middle;
@@ -71,6 +70,9 @@
             list-style: none;
             font-weight: bold;
             margin:10px 0;
+        }
+        input.date_field {
+            width:150px;
         }
     </style>
     <script>

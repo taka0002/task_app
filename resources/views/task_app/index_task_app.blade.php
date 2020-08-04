@@ -6,7 +6,7 @@
 <div class="container">
     <h1 class="text-primary">{{ $title }}</h1>
     <p class="username text-center">現在のユーザー名: <span>{{ Auth::user()->name }}</span></p>
-    <form action="{{ url('/logout') }}" method="post" class="post">
+    <form action="{{ url('/logout') }}" method="post" class="post text-right">
         {{ csrf_field() }}
         <button type="submit" class="btn btn-primary">ログアウト</button>
     </form>
@@ -22,33 +22,29 @@
     <p class="error">{{ $error }}</p>
     @endforeach
     {{-- 以下にフォームを追記します。 --}}
-    <form method="post" action="{{ url('/task_apps') }}" enctype="multipart/form-data">
+    <form method="post" action="{{ url('/task_apps') }}" enctype="multipart/form-data" class="form-horizontal">
         {{-- LaravelではCSRF対策のため以下の一行が必須です。 --}}
         {{ csrf_field() }}
 
-        <div>
-            <label>
-                <input type="text" name="body" class="comment_field" placeholder="To Doを入力">
-            </label>
+        <div class="form-group">
+            <input type="text" name="body" class="comment_field form-control" placeholder="To Doを入力">
         </div>
 
-        <div>
-            <label>
-                <span>締め切り日時：</span>
-                <input type="date" name="date" class="date_field" placeholder="締め切り日時を入力">
-            </label>
+        <div class="form-group">
+            <span>締め切り日時：</span>
+            <input type="date" name="date" class="date_field" placeholder="締め切り日時を入力">
         </div>
 
-        <div>
+        <div class="form-group">
             <label>
-                <select name="status" class="status">
+                <select name="status" class="status form-control">
                         <option value="0">未着手</option>
                         <option value="1">着手中</option>   
                 </select>
             </label>
         </div>
 
-        <div class="post">
+        <div class="post form-group">
             <input type="submit" value="登録" class="btn btn-primary">
         </div>
     </form>
