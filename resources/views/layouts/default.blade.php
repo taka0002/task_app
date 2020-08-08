@@ -15,6 +15,10 @@
             margin:20px 0;
             font-style:italic;
         }
+        h1 a:hover{
+            text-decoration: none;
+            color: #007bff;
+        }
         .username {
             font-size:24px;
             font-style:italic;
@@ -73,24 +77,27 @@
         }
         input.date_field {
             width:150px;
+            height: 40px;
         }
     </style>
     <script>
         $(function(){
             $('div.text').click(function(){
-                if(!$(this).hasClass('on')){
-                    $(this).addClass('on');
-                    var txt = $(this).text();
-                    $(this).html('<input type="text" name="body" value="'+txt+'" />');
-                    $('div > input').focus().blur(function(){
-                    var inputVal = $(this).val();
-                    //もし空欄だったら空欄にする前の内容に戻す
-                    if(inputVal===''){
-                        inputVal = this.defaultValue;
+                if ($(window).width() > 1024) {
+                    if(!$(this).hasClass('on')){
+                        $(this).addClass('on');
+                        var txt = $(this).text();
+                        $(this).html('<input type="text" name="body" value="'+txt+'" />');
+                        $('div > input').focus().blur(function(){
+                        var inputVal = $(this).val();
+                        //もし空欄だったら空欄にする前の内容に戻す
+                        if(inputVal===''){
+                            inputVal = this.defaultValue;
+                        };
+                        //編集が終わったらtextで置き換える
+                        $(this).parent().removeClass('on').text(inputVal);
+                        });
                     };
-                    //編集が終わったらtextで置き換える
-                    $(this).parent().removeClass('on').text(inputVal);
-                    });
                 };
             });
 
