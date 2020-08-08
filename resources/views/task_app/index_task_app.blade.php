@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container">
-    <h1 class="text-primary">{{ $title }}</h1>
+    <h1 class="text-primary"><a href="http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps" rel=”noopener”>{{ $title }}</a></h1>
     <p class="username text-center">現在のユーザー名: <span>{{ Auth::user()->name }}</span></p>
     <form action="{{ url('/logout') }}" method="post" class="post text-right">
         {{ csrf_field() }}
