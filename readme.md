@@ -2,6 +2,8 @@ To doリストアプリ
 
 Laravelを使用して、日々のtodoを管理するアプリを作成しました。
 
+URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
+
 ![スクリーンショット 2020-07-28 20 42 59](https://user-images.githubusercontent.com/63849657/88661112-f3e97000-d112-11ea-8300-5afbd6973fdd.png)
 
 【こだわった点】
