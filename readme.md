@@ -23,7 +23,7 @@ URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
 
 - それぞれの締め切り期限の日にちをクリックすると、その場で締め切り日の変更が可能。変更ボタンを押すとpostされて変更可能
 
-![タイトルなし](https://user-images.githubusercontent.com/63849657/88667943-f18c1380-d11c-11ea-8986-e84c69d9e26b.gif)
+![タイトルなし_4](https://user-images.githubusercontent.com/63849657/89746780-8c5df800-daf6-11ea-8753-d5bac6145b2a.gif)
 
 - それぞれのタスクは、削除ボタンから削除可能（アラートの表示）
 
