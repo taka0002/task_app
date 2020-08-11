@@ -29,4 +29,10 @@ URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
 
 ![タイトルなし_削除](https://user-images.githubusercontent.com/63849657/89746886-0b533080-daf7-11ea-986a-f8691fc16b0b.gif)
 
-【使用言語など】 HTML/CSS、JavaScript、jQuery、PHP、MySQL、Laravel、GitHub、Docker
+【使用言語】 HTML/CSS、JavaScript、jQuery、PHP
+
+【フレームワーク】 Laravel
+
+【DB】 MySQL
+
+【環境構築】 Docker
