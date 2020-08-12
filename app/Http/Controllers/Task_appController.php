@@ -35,7 +35,8 @@ class Task_appController extends Controller
         // requestオブジェクトのvalidateメソッドを利用。
         $request->validate([
             'body' => 'required|max:100', 
-            'date' => 'required'// nameは必須、20文字以内
+            'date' => 'required',// nameは必須、20文字以内
+            'description' => 'max:300'
         ]);
 
         // Messageモデルを利用して空のMessageオブジェクトを作成
@@ -46,6 +47,7 @@ class Task_appController extends Controller
         $task_app->body = $request->body;
         $task_app->date = $request->date;
         $task_app->status = $request->status;
+        $task_app->description = $request->description;
         $task_app->users_id = Auth::user()->id;
 
         // messagesテーブルにINSERT
