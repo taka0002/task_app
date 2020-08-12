@@ -36,17 +36,19 @@
         </div>
 
         <div class="form-group">
+            <textarea type="text" name="description" class="remark_field form-control" placeholder="備考欄（300文字まで入力可能）"></textarea>
+        </div>
+
+        <div class="form-group">
             <label>
                 <select name="status" class="status form-control">
                         <option value="0">未着手</option>
                         <option value="1">着手中</option>   
                 </select>
             </label>
+            <input type="submit" value="登録" class="btn btn-primary submit">
         </div>
 
-        <div class="post form-group">
-            <input type="submit" value="登録" class="btn btn-primary">
-        </div>
     </form>
     <div class="table-responsive">
         <table class="table table-bordered table-hover">
@@ -68,6 +70,7 @@
                             </select>
                         </th>
                     </form>
+                    <th class="text-nowrap">詳細</th>
                     <th class="text-nowrap">終わったら</th>
                 </tr>
                 @forelse($task_apps as $task_app)
@@ -108,6 +111,23 @@
                                 <input type="hidden" name="sql_kind" value="update_date">
                                 <span class="date">{{ $task_app->date }}</span>
                         </form>
+                    </td>
+                    <td>
+                        @if($task_app->description === null)
+                            なし
+                        @else
+                        <div class="description">
+                            <button class="btn btn-primary">詳細</button>
+                        </div>
+                        @endif
+                        <!--ポップアップ時の処理-->
+                        <div class="popup">
+                            <div class="popup_content">
+                                <p>{{ $task_app->description }}</p>
+                            <button class="back btn btn-primary">閉じる</button>
+                            </div>
+                        </div>
+
                     </td>
                     <td>
                     <form method="post" action="{{ url('/task_apps')}}">

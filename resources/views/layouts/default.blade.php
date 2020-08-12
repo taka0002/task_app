@@ -79,6 +79,37 @@
             width:150px;
             height: 40px;
         }
+        .remark_field {
+            height: 100px;
+        }
+        .popup {
+            z-index: 2;
+            display: none;
+            height: 105vh;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+        }
+        .popup_content {
+            padding: 20px;
+            width: 75%;
+            border-radius: 10px;
+            border:2px solid black;
+            background-color:#f0fff0;
+        }
+        .show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .submit {
+            margin-left: 15px;
+        }
+        label {
+            margin-bottom: 0;
+        }
     </style>
     <script>
         $(function(){
@@ -129,7 +160,13 @@
             $(".text").change(function(){
                 $("#submit_form").submit();
             });
-            
+
+            $('.description').on('click',function(){
+                $(this).nextAll('.popup').addClass('show');
+            });
+            $('.back').on('click',function(){
+                $('.popup').removeClass('show');
+            });
         });
     </script>
 </head>
