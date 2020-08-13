@@ -19,7 +19,7 @@ URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
 
 - 現在のステータスに関しては、クリックした時点で「未着手」「着手中」にステータスを変えられる（着手中の場合は色が変更）
 
-![タイトルなし](https://user-images.githubusercontent.com/63849657/89746721-3b4e0400-daf6-11ea-8190-1cee178910b4.gif)
+![ステータス変更](https://user-images.githubusercontent.com/63849657/90129774-3ada9500-dda4-11ea-8247-27701714146a.gif)
 
 - それぞれの締め切り期限の日にちをクリックすると、その場で締め切り日の変更が可能。変更ボタンを押すとpostされて変更可能
 
