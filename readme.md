@@ -7,6 +7,11 @@ URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
 ![スクリーンショット 2020-08-13 20 22 11](https://user-images.githubusercontent.com/63849657/90129019-d834c980-dda2-11ea-9cd9-ba34f19e4a50.png)
 
 【こだわった点】
+
+- 詳細ボタンを押すと、ポップアップで備考欄が表示される
+
+![popup](https://user-images.githubusercontent.com/63849657/90130317-3b276000-dda5-11ea-830e-181be3674fae.gif)
+
 - todoのリストは登録順ではなく、締め切り日の近い順から並べている（デフォルトの状態）
 - 「現在のステータス」「締め切り期限」に関しては、selectで選択すればリストの並び替えが可能
 
