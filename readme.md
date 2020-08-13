@@ -15,7 +15,7 @@ URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
 - todoのリストは登録順ではなく、締め切り日の近い順から並べている（デフォルトの状態）
 - 「現在のステータス」「締め切り期限」に関しては、selectで選択すればリストの並び替えが可能
 
-![並び替え](https://user-images.githubusercontent.com/63849657/90129269-4bd6d680-dda3-11ea-8756-954f1dff391a.gif)
+![status_change](https://user-images.githubusercontent.com/63849657/90130568-a40ed800-dda5-11ea-99b8-14e5ac57752a.gif)
 
 - やることリストをその場編集できる
 - その場編集したものに関しては、編集が完了した時点でenterを押すと、自動的にpostされて修正内容が保存される
