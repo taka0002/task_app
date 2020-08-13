@@ -15,7 +15,7 @@ URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
 - やることリストをその場編集できる
 - その場編集したものに関しては、編集が完了した時点でenterを押すと、自動的にpostされて修正内容が保存される
 
-![タイトルなし](https://user-images.githubusercontent.com/63849657/89746663-dbeff400-daf5-11ea-8cb4-8127aa9bf2a7.gif)
+![書き込み編集](https://user-images.githubusercontent.com/63849657/90129494-b9830280-dda3-11ea-8f4c-cf1949e64b7c.gif)
 
 - 現在のステータスに関しては、クリックした時点で「未着手」「着手中」にステータスを変えられる（着手中の場合は色が変更）
 
