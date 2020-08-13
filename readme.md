@@ -4,7 +4,7 @@ Laravelを使用して、日々のtodoを管理するアプリを作成しまし
 
 URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
 
-![スクリーンショット 2020-08-10 10 33 48](https://user-images.githubusercontent.com/63849657/89746529-14430280-daf5-11ea-9ca4-b77fd67f6712.png)
+![スクリーンショット 2020-08-13 20 22 11](https://user-images.githubusercontent.com/63849657/90129019-d834c980-dda2-11ea-9cd9-ba34f19e4a50.png)
 
 【こだわった点】
 - todoのリストは登録順ではなく、締め切り日の近い順から並べている（デフォルトの状態）
