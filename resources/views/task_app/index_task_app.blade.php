@@ -35,7 +35,7 @@
             <input type="date" name="date" class="date_field" placeholder="締め切り日時を入力">
         </div>
 
-        <div class="form-group">
+        <div class="form-group hidden">
             <textarea type="text" name="description" class="remark_field form-control" placeholder="備考欄（300文字まで入力可能）"></textarea>
         </div>
 
@@ -70,11 +70,11 @@
                             </select>
                         </th>
                     </form>
-                    <th class="text-nowrap">詳細</th>
+                    <th class="text-nowrap hidden">詳細</th>
                     <th class="text-nowrap">終わったら</th>
                 </tr>
                 @forelse($task_apps as $task_app)
-                <tr class="<?php echo $task_app->status === 1 ? "false" : "" ?>">
+                <tr class="<?php echo $task_app->status === 1 ? "false" : "" ?> pop">
                     <td class="text-nowrap">
                         <form method="post" action="{{ url('/task_apps')}}" id="submit_form">
                             {{ csrf_field() }}
@@ -112,7 +112,7 @@
                                 <span class="date">{{ $task_app->date }}</span>
                         </form>
                     </td>
-                    <td>
+                    <td class="hidden">
                         @if($task_app->description === null)
                             なし
                         @else
@@ -124,10 +124,9 @@
                         <div class="popup">
                             <div class="popup_content">
                                 <p>{{ $task_app->description }}</p>
-                            <button class="back btn btn-primary">閉じる</button>
+                                <button class="back btn btn-primary">閉じる</button>
                             </div>
                         </div>
-
                     </td>
                     <td>
                     <form method="post" action="{{ url('/task_apps')}}">

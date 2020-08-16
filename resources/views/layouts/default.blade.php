@@ -83,14 +83,13 @@
             height: 100px;
         }
         .popup {
-            z-index: 2;
+            z-index: 10;
             display: none;
             height: 105vh;
             width: 100%;
             position: fixed;
             top: 0;
             left: 0;
-            overflow-y: auto;
         }
         .popup_content {
             padding: 20px;
@@ -99,8 +98,12 @@
             border:2px solid black;
             background-color:#f0fff0;
         }
+        .popup_content p {
+            overflow: scroll;
+        }
         .show {
             display: flex;
+            overflow:visible;
             justify-content: center;
             align-items: center;
         }
@@ -109,6 +112,14 @@
         }
         label {
             margin-bottom: 0;
+        }
+        .table-responsive {
+            z-index: -1;
+        }
+        @media screen and (max-width: 1024px) {
+            .hidden {
+                display: none;
+            }
         }
     </style>
     <script>
@@ -131,7 +142,6 @@
                     };
                 };
             });
-
             $('.date').click(function(){
                 if(!$(this).hasClass('on')){
                     $(this).addClass('on');
