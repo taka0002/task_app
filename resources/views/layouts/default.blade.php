@@ -40,6 +40,9 @@
             border-radius: 5px;
             padding: 0 10px 3px;
         }
+        table.table {
+            margin-bottom: 50px;
+        }
         .table-bordered td {
             vertical-align: middle;
         }
@@ -116,6 +119,14 @@
         .table-responsive {
             z-index: -1;
         }
+        footer {
+            background: #d3d3d3;
+            text-align: center;
+            padding: 10px 0;
+        }
+        footer p {
+            margin-bottom: 0;
+        }
         @media screen and (max-width: 1024px) {
             .hidden {
                 display: none;
@@ -129,7 +140,7 @@
                     if(!$(this).hasClass('on')){
                         $(this).addClass('on');
                         var txt = $(this).text();
-                        $(this).html('<input type="text" name="body" value="'+txt+'" />');
+                        $(this).html('<input type="text" name="body" autocomplete="name" value="'+txt+'" />');
                         $('div > input').focus().blur(function(){
                         var inputVal = $(this).val();
                         //もし空欄だったら空欄にする前の内容に戻す
@@ -182,5 +193,8 @@
 </head>
 <body>
     @yield('content')
+    <footer class="fixed-bottom">
+        <p class="text"><small>Copyright &copy; Takahiro Koyama All Rights Reserved.</small></p>
+    </footer>
 </body>
 </html>
