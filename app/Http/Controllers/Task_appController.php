@@ -12,13 +12,13 @@ class Task_appController extends Controller
         // Messageモデルを利用してmessageの一覧を取得
 
         if($request->sort === "desc") {
-            $task_apps = \App\task_app::all()->where('users_id',Auth::user()->id)->sortByDesc('date');
+            $task_apps = \App\task_app::all()->where('users_id',Auth::user()->id)->sortBy("date = ''")->sortByDesc('date');
         } else {
             $task_apps = \App\task_app::all()->where('users_id',Auth::user()->id)->sortBy('date');
         }
 
         if($request->status === "in") {
-            $task_apps = \App\task_app::all()->where('users_id',Auth::user()->id)->sortByDesc('status');
+            $task_apps = \App\task_app::all()->where('users_id',Auth::user()->id)->sortBy("date")->sortByDesc('status');
         } else if($request->status === "out") {
             $task_apps = \App\task_app::all()->where('users_id',Auth::user()->id)->sortBy('status');
         }
@@ -35,7 +35,6 @@ class Task_appController extends Controller
         // requestオブジェクトのvalidateメソッドを利用。
         $request->validate([
             'body' => 'required|max:100', 
-            'date' => 'required',// nameは必須、20文字以内
             'description' => 'max:300'
         ]);
 
@@ -47,6 +46,9 @@ class Task_appController extends Controller
         $task_app->body = $request->body;
         $task_app->date = $request->date;
         $task_app->status = $request->status;
+        if($request->date === null) {
+            $task_app->status = 3;
+        }
         $task_app->description = $request->description;
         $task_app->users_id = Auth::user()->id;
 
