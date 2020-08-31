@@ -12,13 +12,13 @@ class Task_appController extends Controller
         // Messageモデルを利用してmessageの一覧を取得
 
         if($request->sort === "desc") {
-            $task_apps = \App\task_app::all()->where('users_id',Auth::user()->id)->sortBy('date')->sortByDesc('date');
+            $task_apps = \App\task_app::all()->where('users_id',Auth::user()->id)->sortByDesc('date');
         } else {
             $task_apps = \App\task_app::all()->where('users_id',Auth::user()->id)->sortBy('date');
         }
 
         if($request->status === "in") {
-            $task_apps = \App\task_app::all()->where('users_id',Auth::user()->id)->sortBy('date')->sortByDesc('status');
+            $task_apps = \App\task_app::all()->where('users_id',Auth::user()->id)->sortByDesc('status');
         } else if($request->status === "out") {
             $task_apps = \App\task_app::all()->where('users_id',Auth::user()->id)->sortBy('status');
         }
