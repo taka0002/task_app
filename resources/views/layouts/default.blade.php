@@ -119,6 +119,12 @@
         .table-responsive {
             z-index: -1;
         }
+        .parent {
+            background: #ffd700;
+        }
+        .underway {
+            background: #a9a9a9;
+        }
         footer {
             background: #d3d3d3;
             text-align: center;
@@ -188,6 +194,9 @@
             $('.back').on('click',function(){
                 $('.popup').removeClass('show');
             });
+
+            $("tr td:has(.moge)").parent().addClass("parent");
+            $("tr td:has(.false)").parent().addClass("underway");
         });
     </script>
 </head>

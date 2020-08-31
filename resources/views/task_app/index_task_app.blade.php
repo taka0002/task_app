@@ -6,6 +6,7 @@
 <div class="container">
     <h1 class="text-primary"><a href="http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps" rel=”noopener”>{{ $title }}</a></h1>
     <p class="username text-center">現在のユーザー名: <span>{{ Auth::user()->name }}</span></p>
+    <p class="text-center">操作の仕方がわからない方は<a href="https://github.com/taka0002/task_app" target="_blank" rel=”noopener”>こちら</a>を参照してください</p>
     <form action="{{ url('/logout') }}" method="post" class="post text-right">
         {{ csrf_field() }}
         <button type="submit" class="btn btn-primary">ログアウト</button>
@@ -32,7 +33,8 @@
 
         <div class="form-group">
             <span>締め切り日時：</span>
-            <input type="date" name="date" class="date_field" placeholder="締め切り日時を入力">
+            <input type="date" name="date" class="date_field">
+            <span>（空欄の場合は固定表示になります）</span>
         </div>
 
         <div class="form-group hidden">
@@ -40,6 +42,7 @@
         </div>
 
         <div class="form-group">
+            <span>ステータス：</span>
             <label>
                 <select name="status" class="status form-control">
                         <option value="0">未着手</option>
@@ -74,7 +77,7 @@
                     <th class="text-nowrap">終わったら</th>
                 </tr>
                 @forelse($task_apps as $task_app)
-                <tr class="<?php echo $task_app->status === 1 ? "false" : "" ?> pop">
+                <tr class="pop">
                     <td class="text-nowrap">
                         <form method="post" action="{{ url('/task_apps')}}" id="submit_form">
                             {{ csrf_field() }}
@@ -85,6 +88,7 @@
                         </form>
                     </td>
                     <td>
+                    @if($task_app->date !== null)
                     @if($task_app->status === 0)
                     <form method="post" action="{{ url('/task_apps')}}">
                     {{ csrf_field() }}
@@ -97,13 +101,17 @@
                     <form method="post" action="{{ url('/task_apps')}}">
                     {{ csrf_field() }}
                     {{ method_field('PATCH') }}
-                        <input type="submit" value="着手中" class="update">
+                        <input type="submit" value="着手中" class="update false">
                         <input type="hidden" name="id" value="{{ $task_app->id }}">
                         <input type="hidden" name="sql_kind" value="update">
                     </form>
                     @endif
+                    @endif
                     </td>
                     <td class="text-nowrap">
+                        @if($task_app->date === null)
+                            <div class="moge">固定</div>
+                        @else
                         <form method="post" action="{{ url('/task_apps')}}" id="submit_form">
                                 {{ csrf_field() }}
                                 {{ method_field('PATCH') }}
@@ -111,6 +119,7 @@
                                 <input type="hidden" name="sql_kind" value="update_date">
                                 <span class="date">{{ $task_app->date }}</span>
                         </form>
+                        @endif
                     </td>
                     <td class="hidden">
                         @if($task_app->description === null)

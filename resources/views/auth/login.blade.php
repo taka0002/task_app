@@ -38,6 +38,10 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="text-center">
+                            <p>テストユーザーアドレス：test@test.com</p>
+                            <p>テストユーザーパスワード：taka0002</p>
+                        </div>
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
