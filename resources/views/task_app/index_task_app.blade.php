@@ -28,7 +28,7 @@
         {{ csrf_field() }}
 
         <div class="form-group">
-            <input type="text" name="body" class="comment_field form-control" placeholder="To Doを入力">
+            <input type="text" name="body" class="comment_field form-control" placeholder="To Doを入力（20文字まで入力可能）">
         </div>
 
         <div class="form-group">
@@ -54,7 +54,7 @@
 
     </form>
     <div class="table-responsive">
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered table-hover table-sm">
                 <tr class="thead-light">
                     <th class="text-nowrap">やること</th>
                     <form method="get" action="{{ url('/task_apps')}}" id="submit_form">

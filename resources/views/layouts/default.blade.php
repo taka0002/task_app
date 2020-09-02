@@ -116,6 +116,14 @@
         label {
             margin-bottom: 0;
         }
+        .table-sm td,
+        .table-sm th {
+            padding: 0.5rem;
+        }
+        th:first-child,
+        td:first-child {
+            width:350px;
+        }
         .table-responsive {
             z-index: -1;
         }
@@ -132,6 +140,10 @@
         }
         footer p {
             margin-bottom: 0;
+        }
+        div.text input {
+            width:330px;
+            text-align: center;
         }
         @media screen and (max-width: 1024px) {
             .hidden {
@@ -160,11 +172,6 @@
                     $(this).addClass('on');
                     var txt = $(this).text();
                     $(this).html('<input type="date" name="date" class="show_date" value="'+txt+'" /><input type="submit" class="change_date" value="変更">');
-                    $('span.date > input.show_date').focus().blur(function(){
-                    var inputVal = $(this).val();
-                    //もし空欄だったら空欄にする前の内容に戻す
-                    $(this).parent().removeClass('on').text(inputVal);
-                    });
                 };
             });
 
