@@ -34,7 +34,7 @@ class Task_appController extends Controller
 
         // requestオブジェクトのvalidateメソッドを利用。
         $request->validate([
-            'body' => 'required|max:100', 
+            'body' => 'required|max:20', 
             'description' => 'max:300'
         ]);
 
@@ -64,6 +64,11 @@ class Task_appController extends Controller
         $task_app = \App\task_app::find($request->id);
 
         if($request->sql_kind === "update_text") {
+
+            // requestオブジェクトのvalidateメソッドを利用。
+            $request->validate([
+                'body' => 'required|max:20'
+            ]);
 
             $task_app->body = $request->body;
             $task_app->save();
