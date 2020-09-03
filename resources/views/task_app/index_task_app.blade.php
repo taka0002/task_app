@@ -13,8 +13,12 @@
     </form>
 
     @if (session('status'))
-    <div class="alert alert-success" role="alert" onclick="this.classList.add('hidden')">
-        {{ session('status') }}
+    <div class="status_popup">
+        <div class="popup-inner">
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        </div>
     </div>
     @endif
 
