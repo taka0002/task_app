@@ -32,7 +32,7 @@ URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
 
 - それぞれのタスクは、削除ボタンから削除可能（アラートの表示）
 
-![delete](https://user-images.githubusercontent.com/63849657/90130115-da982300-dda4-11ea-9ee0-b988056331ff.gif)
+![delete_edit](https://user-images.githubusercontent.com/63849657/92319346-f1533200-f051-11ea-87e0-e444f7f9944d.gif)
 
 【使用言語】 HTML/CSS、JavaScript、jQuery、PHP
 
