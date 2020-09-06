@@ -169,6 +169,9 @@
             width:330px;
             text-align: center;
         }
+        .error {
+            font-weight: bold;
+        }
         @media screen and (max-width: 1024px) {
             .hidden {
                 display: none;
@@ -228,6 +231,7 @@
                 $(this).hide("status_popup");
             });
         });
+
     </script>
 </head>
 <body>

@@ -118,4 +118,10 @@ return [
 
     'attributes' => [],
 
+    'custom' => [
+        'body' => [
+            'required' => 'To Doを入力してください！',
+        ],
+    ],
+
 ];
