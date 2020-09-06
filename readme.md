@@ -4,7 +4,7 @@ Laravelを使用して、日々のtodoを管理するアプリを作成しまし
 
 URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
 
-![スクリーンショット 2020-08-13 20 22 11](https://user-images.githubusercontent.com/63849657/90129019-d834c980-dda2-11ea-9cd9-ba34f19e4a50.png)
+![スクリーンショット 2020-09-06 14 50 16](https://user-images.githubusercontent.com/63849657/92319138-71789800-f050-11ea-9277-2be88d49b156.png)
 
 【こだわった点】
 
