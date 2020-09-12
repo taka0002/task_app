@@ -154,7 +154,6 @@
                 <li class="no_list">リストがありません。</li>
             @endforelse
         </table>
-        </div>
     </div>
 </div>
 @endsection
