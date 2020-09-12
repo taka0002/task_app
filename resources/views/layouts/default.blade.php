@@ -216,8 +216,8 @@
                 $("#submit_form").submit();
             });
 
-            $('.description').on('click',function(){
-                $(this).nextAll('.popup').addClass('show');
+            $('.description .btn').on('click',function(){
+                $(this).parent().nextAll('.popup').addClass('show');
             });
             $('.back').on('click',function(){
                 $('.popup').removeClass('show');
