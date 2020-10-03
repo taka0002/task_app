@@ -96,14 +96,52 @@ class Task_appController extends Controller
         }
     }
 
-    public function destroy(Request $request) {
+    public function cancel(Request $request) {
 
         $task_app = \App\task_app::find($request->id);
 
         $task_app->delete();
 
+        return redirect('/task_apps')->with('status', '取り消しました！');
+    }
+
+    public function destroy(Request $request) {
+
+        $task_app = \App\task_app::find($request->body);
+        $task_app = \App\task_app::find($request->description);
+        $task_app = \App\task_app::find($request->id);
+
+        if($request->body !== NULL) {
+
+            $task_app_archive = new \App\taks_apps_archive;
+            // フォームから送られた値を設定
+            $task_app_archive->task_apps_id = $request->id;
+            $task_app_archive->body = $request->body;
+            $task_app_archive->description = $request->description;
+            $task_app_archive->users_id = Auth::user()->id;
+            $task_app_archive->save();
+
+        $task_app->delete();
+
         // メッセージ一覧ページにリダイレクト
         return redirect('/task_apps')->with('status', '削除しました！お疲れさまでした！');
+
+        }
+
+        $task_app->delete();
+
+        // メッセージ一覧ページにリダイレクト
+        return redirect('/task_apps');
+    }
+
+    public function index_task_app_archive(Request $request) {
+        
+        $task_apps_archive = \App\taks_apps_archive::all()->where('users_id',Auth::user()->id);
+
+        return view('task_app.done_task_app',[
+            'title' => 'To Doリスト',
+            'task_apps_archive' => $task_apps_archive,
+        ]);
     }
 
     public function __construct() {
