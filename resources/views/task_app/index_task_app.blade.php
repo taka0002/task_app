@@ -6,12 +6,11 @@
 <div class="container">
     <h1 class="text-primary"><a href="http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps" rel=”noopener”>{{ $title }}</a></h1>
     <p class="username text-center">現在のユーザー名: <span>{{ Auth::user()->name }}</span></p>
-    <p class="text-center">操作の仕方がわからない方は<a href="https://github.com/taka0002/task_app" target="_blank" rel=”noopener”>こちら</a>を参照してください</p>
+    <p class="text-center help">操作の仕方がわからない方は<a href="https://github.com/taka0002/task_app" target="_blank" rel=”noopener”>こちら</a>を参照してください</p>
     <form action="{{ url('/logout') }}" method="post" class="post text-right">
         {{ csrf_field() }}
         <button type="submit" class="btn btn-primary">ログアウト</button>
     </form>
-
     @if (session('status'))
     <div class="status_popup">
         <div class="popup-inner">
@@ -27,7 +26,8 @@
     <p class="error">{{ $error }}</p>
     @endforeach
     {{-- 以下にフォームを追記します。 --}}
-    <form method="post" action="{{ url('/task_apps') }}" enctype="multipart/form-data" class="form-horizontal">
+    <button class="scroll text-center btn btn-info" type="button" data-toggle="collapse" data-target="#demo">ここをクリックしてやること登録</button>
+    <form method="post" action="{{ url('/task_apps') }}" enctype="multipart/form-data" class="form-horizontal collapse" id="demo">
         {{-- LaravelではCSRF対策のため以下の一行が必須です。 --}}
         {{ csrf_field() }}
 
@@ -38,7 +38,7 @@
         <div class="form-group">
             <span>締め切り日時：</span>
             <input type="date" name="date" class="date_field">
-            <span>（空欄の場合は固定表示になります）</span>
+            <span class="empty_msg">（空欄の場合は固定表示になります）</span>
         </div>
 
         <div class="form-group hidden">
@@ -57,10 +57,12 @@
         </div>
 
     </form>
+    <p class="text-center done"><a href="{{ url('/task_apps_done')}}" target="_blank" rel=”noopener”>完了済みリストはこちらから</a></p>
     <div class="table-responsive">
         <table class="table table-bordered table-hover table-sm">
                 <tr class="thead-light">
                     <th class="text-nowrap">やること</th>
+                    <th class="text-nowrap hidden">詳細</th>
                     <form method="get" action="{{ url('/task_apps')}}" id="submit_form">
                         <th class="text-nowrap">
                             <select name="status" class="text">
@@ -77,7 +79,7 @@
                             </select>
                         </th>
                     </form>
-                    <th class="text-nowrap hidden">詳細</th>
+                    <th class="text-nowrap">取り消し</th>
                     <th class="text-nowrap">終わったら</th>
                 </tr>
                 @forelse($task_apps as $task_app)
@@ -90,6 +92,22 @@
                             <input type="hidden" name="sql_kind" value="update_text">
                             <div class="text">{{ $task_app->body }}</div>
                         </form>
+                    </td>
+                    <td class="hidden">
+                        @if($task_app->description === null)
+                            なし
+                        @else
+                        <div class="description">
+                            <button class="btn btn-primary">詳細</button>
+                        </div>
+                        @endif
+                        <!--ポップアップ時の処理-->
+                        <div class="popup">
+                            <div class="popup_content">
+                                <p>{{ $task_app->description }}</p>
+                                <button class="back btn btn-primary">閉じる</button>
+                            </div>
+                        </div>
                     </td>
                     <td>
                     @if($task_app->date !== null)
@@ -125,28 +143,22 @@
                         </form>
                         @endif
                     </td>
-                    <td class="hidden">
-                        @if($task_app->description === null)
-                            なし
-                        @else
-                        <div class="description">
-                            <button class="btn btn-primary">詳細</button>
-                        </div>
-                        @endif
-                        <!--ポップアップ時の処理-->
-                        <div class="popup">
-                            <div class="popup_content">
-                                <p>{{ $task_app->description }}</p>
-                                <button class="back btn btn-primary">閉じる</button>
-                            </div>
-                        </div>
+                    <td>
+                    <form method="post" action="{{ url('/task_apps')}}">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <input type="submit" value="削除" class="btn btn-primary">
+                    <input type="hidden" name="id" value="{{ $task_app->id }}">
+                    </form>
                     </td>
                     <td>
                     <form method="post" action="{{ url('/task_apps')}}">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
-                    <input type="submit" value="削除" class="btn btn-primary delete">
+                    <input type="submit" value="完了" class="btn btn-primary delete">
                     <input type="hidden" name="id" value="{{ $task_app->id }}">
+                    <input type="hidden" name="body" value="{{ $task_app->body }}">
+                    <input type="hidden" name="description" value="{{ $task_app->description }}">
                     </form>
                     </td>
                 </tr>
