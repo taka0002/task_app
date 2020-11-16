@@ -4,7 +4,7 @@ Laravelを使用して、日々のtodoを管理するアプリを作成しまし
 
 URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
 
-![todo](https://user-images.githubusercontent.com/63849657/99249661-cead7880-284d-11eb-926d-06688491818c.png)gi
+![todo](https://user-images.githubusercontent.com/63849657/99249661-cead7880-284d-11eb-926d-06688491818c.png)
 
 【こだわった点】
 
@@ -20,7 +20,7 @@ URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
 - やることリストをその場編集できる
 - その場編集したものに関しては、編集が完了した時点でenterを押すと、自動的にpostされて修正内容が保存される
 
-![text_edit](https://user-images.githubusercontent.com/63849657/92319193-f5328480-f050-11ea-85f6-1673e0b3da4a.gif)
+![todo_change_1](https://user-images.githubusercontent.com/63849657/99251141-2d73f180-2850-11eb-9e1a-e4553bbcff18.gif)
 
 - 現在のステータスに関しては、クリックした時点で「未着手」「着手中」にステータスを変えられる（着手中の場合は色が変更）
 
