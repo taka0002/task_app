@@ -24,20 +24,26 @@ h1 {
     text-align: center;
     margin:20px 0;
     font-style:italic;
+    font-size: 24px;
 }
 .help {
     font-size: 24px;
 }
 form {
-    border-radius: 10px;
+    border-radius: 5px;
 }
 h1 a:hover{
     text-decoration: none;
     color: #007bff;
 }
+a:hover {
+    text-decoration: none;
+}
 .username {
-    font-size:28px;
     font-style:italic;
+}
+.username span {
+    font-size: 36px;
 }
 input {
     vertical-align : middle;
@@ -53,7 +59,7 @@ tr.false {
     margin:16px 0;
 }
 span {
-    color:#ff0000;
+    color:#000000;
     font-weight: bold;
     font-size: 20px;
 }
@@ -125,7 +131,8 @@ th select {
 th select:focus {
     outline: none;
 }
-.no_list {
+.list li.no_list {
+    display:inline;
     list-style: none;
     font-weight: bold;
     margin:10px 0;
@@ -164,7 +171,7 @@ input.date_field {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(-45deg, #afeeee, #faebd7, #f0f8ff, #d6e73c);
+    background: linear-gradient(-45deg, #afeeee, #faebd7, #f0f8ff);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
 }
@@ -182,9 +189,6 @@ th:first-child,
 td:first-child {
     width:350px;
 }
-.table-responsive {
-    border-radius: 10px;
-}
 .pop:last-child {
     border-radius: 0 0 10px 10px;
 }
@@ -192,7 +196,7 @@ td:first-child {
     background: #ffd700;
 }
 .underway {
-    background: #a9a9a9;
+    background: #ffa07a;
 }
 footer {
     background: #d3d3d3;
@@ -210,7 +214,10 @@ div.text input {
     font-weight: bold;
 }
 .scroll {
-    display: none;
+    display: block;
+    margin: 5px auto 20px;
+    width: 50%;
+    font-size: 24px;
 }
 .description .btn {
     position:relative;
@@ -224,13 +231,100 @@ tbody {
 .form-control {
     font-size: 20px !important;
 }
+.tab li {
+    color: #333;
+    float: left;
+    margin: 0 5px -1px 5px;
+    padding: 10px 20px;
+    border: 1px solid #fb4343;
+    cursor: pointer;
+    list-style: none;
+    transition: .3s;
+}
+.tab li.active {
+    color: #fff;
+    background: #fb4343;
+    cursor: auto;
+}
+.list li {
+    display: none;
+}
+ul {
+    padding-left: 0;
+}
+ul.tab li {
+    text-align: center;
+    border-radius: 5px;
+}
+.list li.show_tab {
+    display: block;
+}
+.form-horizontal.collapse.show {
+    display: block;
+}
+.collapse:not(.show) {
+    display: none;
+}
+.container #demo,
+.container #demo_2 {
+    background: none;
+}
+.back {
+    margin-top: 10px;
+}
+.category {
+    margin-bottom:10px;
+    border-radius:5px;
+    padding:5px;
+}
+#demo_2 .submit {
+    margin: 10px 0 0;
+}
+.category label {
+    font-size: 16px;
+}
+.btn-primary {
+    background-color: #a2d7dd;
+    border-color: #a2d7dd;
+}
+.category_choice {
+    display:none;
+}
+.category_choice label select{
+    padding: 3px 0;
+}
+.select_category {
+    margin-bottom:10px;
+    font-size:20px;
+}
+.select_category select {
+    padding:3px 0 5px;
+}
+.select_category_submit {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    border-radius: 5px;
+}
+.select_category_name {
+    margin:10px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+#demo .form-group > div {
+    margin:10px 0 0;
+    display:inline;
+}
+th.category_name {
+    width:90%;
+}
 
 @media screen and (max-width: 767px) {
     .empty {
         padding-top:5px;
     }
     h1 {
-        font-size:28px;
+        font-size:24px;
         margin: 10px 0;
     }
     .username {
@@ -239,7 +333,7 @@ tbody {
         margin-bottom: 10px;
     }
     .username span {
-        font-size: 24px;
+        font-size: 28px;
     }
     .help {
         display: none;
@@ -254,7 +348,7 @@ tbody {
         display: block;
         margin:5px 0 10px;
         width: 100%;
-        font-size:24px;
+        font-size:18px;
     }
     th, td {
         font-size: 16px;
@@ -286,16 +380,11 @@ tbody {
     span {
         font-size: 16px;
     }
-    .collapse:not(.show) {
-        display: none;
-    }
-    .container .show {
-        display: block;
-    }
     .container .hidden .show {
         display: flex;
     }
-    .container #demo {
+    .container #demo,
+    .container #demo_2 {
         background: #ffffff;
         padding: 10px;
         margin-bottom: 10px;
@@ -305,5 +394,28 @@ tbody {
     }
     .done a{
         font-size: 24px;
+    }
+    ul.tab {
+        display: flex;
+        font-size: 14px;
+    }
+    ul.tab li {
+        flex:1;
+    }
+    #demo .submit {
+        margin: 10px 0 0;
+    }
+    #demo .submit,
+    #demo_2 .submit {
+        width: 100%;
+    }
+    .select_category {
+        font-size:16px;
+    }
+    .select_category_name {
+        font-size: 20px;
+    }
+    #demo .form-group > div {
+        display: block;
     }
 }
