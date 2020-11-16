@@ -75,7 +75,9 @@ class Task_appController extends Controller
             }
             $task_app->description = $request->description;
             $task_app->category_id = $request->category_id;
-            $task_app->category = $category->category_name;
+            if($request->category_id !== "0"){
+                $task_app->category = $category->category_name;
+            }
             $task_app->users_id = Auth::user()->id;
 
             // messagesテーブルにINSERT
@@ -152,8 +154,13 @@ class Task_appController extends Controller
             return redirect('/task_apps')->with('status', '詳細の変更完了！');
 
         } else if($request->sql_kind === "update_category"){
-
-            $task_app->category = $request->category;
+            $category = \App\category::find($request->category_id);
+            $task_app->category_id = $request->category_id;
+            if($request->category_id !== "0"){
+                $task_app->category = $category->category_name;
+            } else {
+                $task_app->category = "未設定";
+            }
             $task_app->save();
 
             return redirect('/task_apps')->with('status', 'カテゴリーの変更完了！');

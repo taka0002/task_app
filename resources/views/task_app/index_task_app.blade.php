@@ -221,10 +221,10 @@
                             <div class="category_choice">
                                 <form method="post" action="{{ url('/task_apps')}}">
                                     <label>
-                                        <select name="category">
-                                            <option>未設定</option>
+                                        <select name="category_id">
+                                            <option value="0">未設定</option>
                                             @forelse($categories as $category)
-                                            <option>{{ $category->category_name }}</option>
+                                            <option value="{{ $category->id }}">{{ $category->category_name }}</option>
                                             @empty
                                             <option selected>未設定</option>
                                             @endforelse
