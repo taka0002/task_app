@@ -4,18 +4,18 @@ Laravelを使用して、日々のtodoを管理するアプリを作成しまし
 
 URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
 
-![スクリーンショット 2020-09-06 14 50 16](https://user-images.githubusercontent.com/63849657/92319138-71789800-f050-11ea-9277-2be88d49b156.png)
+![todo](https://user-images.githubusercontent.com/63849657/99249661-cead7880-284d-11eb-926d-06688491818c.png)gi
 
 【こだわった点】
 
 - 詳細ボタンを押すと、ポップアップで備考欄が表示される
 
-![popup](https://user-images.githubusercontent.com/63849657/90130317-3b276000-dda5-11ea-830e-181be3674fae.gif)
+![todo_popup](https://user-images.githubusercontent.com/63849657/99250233-aeca8480-284e-11eb-9317-aea1b736a434.gif)
 
 - todoのリストは登録順ではなく、締め切り日の近い順から並べている（デフォルトの状態）
 - 「現在のステータス」「締め切り期限」に関しては、selectで選択すればリストの並び替えが可能
 
-![status_change](https://user-images.githubusercontent.com/63849657/90130568-a40ed800-dda5-11ea-99b8-14e5ac57752a.gif)
+![todo_status](https://user-images.githubusercontent.com/63849657/99250842-b179a980-284f-11eb-8ac4-ddb7c84e761c.gif)
 
 - やることリストをその場編集できる
 - その場編集したものに関しては、編集が完了した時点でenterを押すと、自動的にpostされて修正内容が保存される
