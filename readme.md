@@ -24,15 +24,16 @@ URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
 
 - 現在のステータスに関しては、クリックした時点で「未着手」「着手中」にステータスを変えられる（着手中の場合は色が変更）
 
-![status_edit](https://user-images.githubusercontent.com/63849657/92319270-404c9780-f051-11ea-83d0-c4aba6344bbe.gif)
+![todo_status](https://user-images.githubusercontent.com/63849657/99251558-e1757c80-2850-11eb-84fc-cab55ccbb0bb.gif)
 
 - それぞれの締め切り期限の日にちをクリックすると、その場で締め切り日の変更が可能。変更ボタンを押すとpostされて変更可能
 
-![date_edit](https://user-images.githubusercontent.com/63849657/92319322-a6d1b580-f051-11ea-9671-010105d2bf17.gif)
+![todo_change_2](https://user-images.githubusercontent.com/63849657/99251702-25688180-2851-11eb-9f2f-5c67ea6114b6.gif)
 
-- それぞれのタスクは、削除ボタンから削除可能（アラートの表示）
+- それぞれのタスクは、完了ボタンを押すと完了済みリストに移行される（アラートの表示）
+なお、取り消しをボタンを押すと完了済みリストには入らず削除される
 
-![delete_edit](https://user-images.githubusercontent.com/63849657/92319346-f1533200-f051-11ea-87e0-e444f7f9944d.gif)
+![todo_delete](https://user-images.githubusercontent.com/63849657/99251962-8e4ff980-2851-11eb-90e6-f15e1a30ad4c.gif)
 
 【使用言語】 HTML/CSS、JavaScript、jQuery、PHP
 
