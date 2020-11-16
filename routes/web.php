@@ -54,4 +54,8 @@ Route::patch('/task_apps', 'Task_appController@update');
 
 Route::delete('/task_apps', 'Task_appController@destroy');
 
-Route::get('/task_apps_done', 'Task_appController@index_task_app_archive');
+Route::get('/task_apps_category', 'Task_appController@index_task_app_category');
+
+Route::patch('/task_apps_category', 'Task_appController@update');
+
+Route::delete('/task_apps_category', 'Task_appController@destroy');

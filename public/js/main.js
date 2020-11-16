@@ -11,6 +11,18 @@ $(function(){
                 });
             };
     });
+    $('div.text_description').click(function(){
+        if(!$(this).hasClass('on')){
+            $(this).addClass('on');
+            var txt = $(this).text();
+            $(this).html('<input type="text" name="description" value="'+txt+'" class="remark_field form-control" />');
+            $('div.text_description > input').focus().blur(function(){
+            var inputVal = $(this).val();
+            //編集が終わったらtextで置き換える
+            $(this).parent().removeClass('on').text(inputVal);
+            });
+        };
+    });
     $('.date').click(function(){
         if(!$(this).hasClass('on')){
             $(this).addClass('on');
@@ -18,9 +30,22 @@ $(function(){
             $(this).html('<input type="date" name="date" class="show_date" value="'+txt+'" /><input type="submit" class="change_date" value="変更">');
         };
     });
+    
+    $('div.text_category').click(function(){
+        if(!$(this).hasClass('on')){
+            $(this).addClass('on');
+            var txt = $(this).text();
+            $(this).html('<input type="text" name="category_name" value="'+txt+'" />');
+            $('div.text > input').focus().blur(function(){
+            var inputVal = $(this).val();
+            //編集が終わったらtextで置き換える
+            $(this).parent().removeClass('on').text(inputVal);
+            });
+        };
+    });              
 
     $('.delete').click(function(){
-    if(confirm('本当に削除しますか？いいんですね？タスク完了してなかったら減給ですよ？')){
+        if(confirm('本当に完了にしますか？')){
             /* キャンセルの時の処理 */
             location.href = './index_task_app.blade.php';
         }else{
@@ -29,7 +54,16 @@ $(function(){
         }
     });
 
+    $('span.category').click(function(){
+            $(this).css("display", "none");
+            $(this).parent().nextAll('.category_choice').css("display", "inline");
+    });
+
     $(".text").change(function(){
+        $("#submit_form").submit();
+    });
+
+    $(".text_description").change(function(){
         $("#submit_form").submit();
     });
 
@@ -54,4 +88,22 @@ $(function(){
     if($(window).width() < 768) {
         $('.empty_msg').wrap('<div />').parent().addClass("empty");
     };
+
+    //if($(window).width() < 768) {
+        //$('#demo ').wrap('<div />').parent().addClass("empty");
+    //};
+
+    // ①タブをクリックしたら発動
+    $('.tab li').click(function() {
+
+    // ②クリックされたタブの順番を変数に格納
+    var index = $('.tab li').index(this);
+    // ③クリック済みタブのデザインを設定したcssのクラスを一旦削除
+    $('.tab li').removeClass('active');
+    // ④クリックされたタブにクリック済みデザインを適用する
+    $(this).addClass('active');
+    // ⑤コンテンツを一旦非表示にし、クリックされた順番のコンテンツのみを表示
+    $('.list li').removeClass('show_tab').eq(index).addClass('show_tab');
+
+    });
 });
