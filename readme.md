@@ -9,7 +9,7 @@ URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
 「ここをクリックしてやること登録」を押すと入力部分が表示されるのでそこでやることを登録します。
 登録されたTO DOに関しては、「未完了リスト」に一覧で表示されます。（締め切り日順で並んでいます）
 
-![todo_todo](https://user-images.githubusercontent.com/63849657/99528309-714a3080-29e1-11eb-9ec6-a3c1353fb510.png)
+![todo_todo](https://user-images.githubusercontent.com/63849657/99528801-2aa90600-29e2-11eb-94fb-93b26a4d849b.png)
 
 このとき、締め切り日を入れなかった場合は「固定」扱い（毎日やること）として認識され、そのTO DOに関してはデフォルトで上位に黄色で表示されます。
 
@@ -18,7 +18,7 @@ URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
 「ここをクリックしてカテゴリ登録」を押すと、今度はカテゴリの登録が可能。登録したカテゴリに関しては、「カテゴリーの編集はこちらから」で一覧で確認可能。
 （カテゴリーに関しては、登録文言部分をクリックするとその場編集できるようになっています。）
 
-![todo_category](https://user-images.githubusercontent.com/63849657/99528405-963ea380-29e1-11eb-9076-10dad4bf288f.png)
+![todo_category](https://user-images.githubusercontent.com/63849657/99528851-3e546c80-29e2-11eb-9539-009d5295111a.png)
 
 ![todo_category_edit](https://user-images.githubusercontent.com/63849657/99528566-d30a9a80-29e1-11eb-8eb9-5e5f73f23eec.png)
 
