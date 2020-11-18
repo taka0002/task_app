@@ -49,7 +49,7 @@ URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
 - それぞれのタスクは、完了ボタンを押すと完了済みリストに移行される（アラートの表示）
 なお、取り消しをボタンを押すと完了済みリストには入らず削除される
 
-![todo_delete](https://user-images.githubusercontent.com/63849657/99251962-8e4ff980-2851-11eb-90e6-f15e1a30ad4c.gif)
+![todo_delete](https://user-images.githubusercontent.com/63849657/99529467-321cdf00-29e3-11eb-8bc7-247635c42c8d.gif)
 
 【使用言語】 HTML/CSS、JavaScript、jQuery、PHP
 
