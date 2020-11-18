@@ -20,6 +20,8 @@ URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
 
 ![todo_category](https://user-images.githubusercontent.com/63849657/99528405-963ea380-29e1-11eb-9076-10dad4bf288f.png)
 
+![todo_category_edit](https://user-images.githubusercontent.com/63849657/99528566-d30a9a80-29e1-11eb-8eb9-5e5f73f23eec.png)
+
 【こだわった点】
 
 - 詳細ボタンを押すと、ポップアップで備考欄が表示される
