@@ -42,10 +42,22 @@ $(function(){
             $(this).parent().removeClass('on').text(inputVal);
             });
         };
-    });              
+    });
 
+    /*完了ボタン*/
     $('.delete').click(function(){
         if(confirm('本当に完了にしますか？')){
+            /* キャンセルの時の処理 */
+            location.href = './index_task_app.blade.php';
+        }else{
+            /*　OKの時の処理 */
+            return false;
+        }
+    });
+
+    /*取り消しボタン*/
+    $('.cancel').click(function(){
+        if(confirm('取り消しますか？')){
             /* キャンセルの時の処理 */
             location.href = './index_task_app.blade.php';
         }else{
@@ -67,6 +79,7 @@ $(function(){
         $("#submit_form").submit();
     });
 
+    //ポップアップ関連
     $('.description .btn').on('click',function(){
         $(this).parent().nextAll('.popup').addClass('show');
         $(".table-responsive").css("overflow-x", "visible");
@@ -78,6 +91,7 @@ $(function(){
         $(".table-responsive").css("positon", "static");
     });
 
+    //テーブルの色
     $("tr td:has(.moge)").parent().addClass("parent");
     
     $("tr td:has(.false)").parent().addClass("underway");
@@ -88,10 +102,6 @@ $(function(){
     if($(window).width() < 768) {
         $('.empty_msg').wrap('<div />').parent().addClass("empty");
     };
-
-    //if($(window).width() < 768) {
-        //$('#demo ').wrap('<div />').parent().addClass("empty");
-    //};
 
     // ①タブをクリックしたら発動
     $('.tab li').click(function() {

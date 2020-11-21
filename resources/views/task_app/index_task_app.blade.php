@@ -117,7 +117,6 @@
                 @endforelse
             </select>
         </label>
-        {{ csrf_field() }}
         {{ method_field('PATCH') }}
         <input type="submit" value="でカテゴリを絞って表示" class="select_category_submit">
         <input type="hidden" name="sql_kind" value="category_name">
@@ -244,16 +243,16 @@
                         @if($task_app->date !== null)
                         @if($task_app->status === 0)
                         <form method="post" action="{{ url('/task_apps')}}">
-                        {{ csrf_field() }}
-                        {{ method_field('PATCH') }}
+                            {{ csrf_field() }}
+                            {{ method_field('PATCH') }}
                             <input type="submit" value="未着手" class="update">
                             <input type="hidden" name="id" value="{{ $task_app->id }}">
                             <input type="hidden" name="sql_kind" value="update">
                         </form>
                         @elseif($task_app->status === 1)
                         <form method="post" action="{{ url('/task_apps')}}">
-                        {{ csrf_field() }}
-                        {{ method_field('PATCH') }}
+                            {{ csrf_field() }}
+                            {{ method_field('PATCH') }}
                             <input type="submit" value="着手中" class="update false">
                             <input type="hidden" name="id" value="{{ $task_app->id }}">
                             <input type="hidden" name="sql_kind" value="update">
@@ -266,49 +265,49 @@
                         <td class="text-nowrap">
                             @if($task_app->date === null)
                             <form method="post" action="{{ url('/task_apps')}}" id="submit_form" class="moge">
-                                    {{ csrf_field() }}
-                                    {{ method_field('PATCH') }}
-                                    <input type="hidden" name="id" value="{{ $task_app->id }}">
-                                    <input type="hidden" name="status" value="{{ $task_app->status }}">
-                                    <input type="hidden" name="sql_kind" value="update_date">
-                                    <span class="date">固定</span>
+                                {{ csrf_field() }}
+                                {{ method_field('PATCH') }}
+                                <input type="hidden" name="id" value="{{ $task_app->id }}">
+                                <input type="hidden" name="status" value="{{ $task_app->status }}">
+                                <input type="hidden" name="sql_kind" value="update_date">
+                                <span class="date">固定</span>
                             </form>
                             @else
                             <form method="post" action="{{ url('/task_apps')}}" id="submit_form">
-                                    {{ csrf_field() }}
-                                    {{ method_field('PATCH') }}
-                                    <input type="hidden" name="id" value="{{ $task_app->id }}">
-                                    <input type="hidden" name="sql_kind" value="update_date">
-                                    <span class="date">{{ $task_app->date }}</span>
+                                {{ csrf_field() }}
+                                {{ method_field('PATCH') }}
+                                <input type="hidden" name="id" value="{{ $task_app->id }}">
+                                <input type="hidden" name="sql_kind" value="update_date">
+                                <span class="date">{{ $task_app->date }}</span>
                             </form>
                             @endif
                         </td>
 
                         <!--取り消し-->
                         <td>
-                        <form method="post" action="{{ url('/task_apps')}}">
-                        {{ csrf_field() }}
-                        {{ method_field('DELETE') }}
-                        <input type="submit" value="取り消し" class="btn btn-primary">
-                        <input type="hidden" name="id" value="{{ $task_app->id }}">
-                        </form>
+                            <form method="post" action="{{ url('/task_apps')}}">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <input type="submit" value="取り消し" class="btn btn-primary cancel">
+                                <input type="hidden" name="id" value="{{ $task_app->id }}">
+                            </form>
                         </td>
 
                         <!--削除-->
                         <td>
-                        <form method="post" action="{{ url('/task_apps')}}">
-                        {{ csrf_field() }}
-                        {{ method_field('DELETE') }}
-                        <input type="submit" value="完了" class="btn btn-primary delete">
-                        <input type="hidden" name="id" value="{{ $task_app->id }}">
-                        <input type="hidden" name="body" value="{{ $task_app->body }}">
-                        <input type="hidden" name="description" value="{{ $task_app->description }}">
-                        <input type="hidden" name="category" value="{{ $task_app->category }}">
-                        </form>
+                            <form method="post" action="{{ url('/task_apps')}}">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <input type="submit" value="完了" class="btn btn-primary delete">
+                                <input type="hidden" name="id" value="{{ $task_app->id }}">
+                                <input type="hidden" name="body" value="{{ $task_app->body }}">
+                                <input type="hidden" name="description" value="{{ $task_app->description }}">
+                                <input type="hidden" name="category" value="{{ $task_app->category }}">
+                            </form>
                         </td>
                     </tr>
                 @empty
-                    <li class="no_list">リストがありません。</li>
+                    <p class="no_list">リストがありません。</p>
                 @endforelse
             </table>
         </li>
@@ -355,7 +354,7 @@
                     </td>
                 </tr>
             @empty
-                <li class="no_list">リストがありません。</li>
+                <p class="no_list">リストがありません。</p>
             @endforelse
             </table>
         </li>
