@@ -131,7 +131,7 @@ th select {
 th select:focus {
     outline: none;
 }
-.list li.no_list {
+.list p.no_list {
     display:inline;
     list-style: none;
     font-weight: bold;

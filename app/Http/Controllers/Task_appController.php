@@ -226,7 +226,7 @@ class Task_appController extends Controller
             return redirect('/task_apps')->with('status', 'リストから削除しました！お疲れさまでした！');
 
         }
-
+        //カテゴリーの削除
         if($request->category_name !== NULL) {
 
             $category->delete();
@@ -234,9 +234,10 @@ class Task_appController extends Controller
             return redirect('/task_apps');
         }
 
+        //取り消しボタン
         $task_app->delete();
 
-        return redirect('/task_apps');
+        return redirect('/task_apps')->with('status', '取り消しました！');;
     }
 
     public function __construct() {
