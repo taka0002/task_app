@@ -126,6 +126,7 @@ return [
         'category_name' => [
             'unique' => 'カテゴリー名が被っています！',
             'required' => 'カテゴリー名を入力してください！',
+            'max' => 'カテゴリーは:max文字以下で入力してください！',
         ],
         'description' => [
             'required' => '備考欄を入力してください！',
