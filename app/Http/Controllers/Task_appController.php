@@ -53,7 +53,34 @@ class Task_appController extends Controller
 
     public function create(Request $request){
 
-        if($request->body !== null) {
+        if($request->body === null) {
+            
+            if($request->status !== null) {
+
+                $request->validate([
+                    'body' => 'required|max:20', 
+                ]);
+                
+            }
+
+            $request->validate([
+                'category_name' => 'required|unique:categories,category_name|max:20'
+            ]);
+
+            if($request->category_name !== null) {
+
+                $category = new \App\category;
+        
+                $category->id = $request->id;
+                $category->category_name = $request->category_name;
+                $category->users_id = Auth::user()->id;
+        
+                $category->save();
+        
+                return redirect('/task_apps')->with('status', 'カテゴリを登録しました！');
+            }
+
+        } else {
 
             // requestオブジェクトのvalidateメソッドを利用。
             $request->validate([
@@ -86,23 +113,7 @@ class Task_appController extends Controller
             // メッセージ一覧ページにリダイレクト
             return redirect('/task_apps')->with('status', 'リストに入れました！ファイト！');
 
-        } else {
-            
-            $category = new \App\category;
-
-            $request->validate([
-                'category_name' => 'required|unique:categories,category_name|max:20'
-            ]);
-
-            $category->id = $request->id;
-            $category->category_name = $request->category_name;
-            $category->users_id = Auth::user()->id;
-
-            $category->save();
-
-            return redirect('/task_apps')->with('status', 'カテゴリを登録しました！');
-
-        }
+        }       
     }
 
     public function index_task_app_category(Request $request) {
