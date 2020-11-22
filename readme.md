@@ -53,7 +53,7 @@ URL:http://takahiro-kym.sakura.ne.jp/task_app/public/task_apps
 
 【使用言語】 HTML/CSS、JavaScript、jQuery、PHP
 
-【フレームワーク】 Laravel5.4
+【フレームワーク】 Laravel5.5
 
 【DB】 MySQL
 
