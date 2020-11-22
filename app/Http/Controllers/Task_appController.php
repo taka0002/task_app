@@ -60,25 +60,22 @@ class Task_appController extends Controller
                 $request->validate([
                     'body' => 'required|max:20', 
                 ]);
-                
+
             }
 
             $request->validate([
                 'category_name' => 'required|unique:categories,category_name|max:20'
             ]);
 
-            if($request->category_name !== null) {
-
-                $category = new \App\category;
-        
-                $category->id = $request->id;
-                $category->category_name = $request->category_name;
-                $category->users_id = Auth::user()->id;
-        
-                $category->save();
-        
-                return redirect('/task_apps')->with('status', 'カテゴリを登録しました！');
-            }
+            $category = new \App\category;
+    
+            $category->id = $request->id;
+            $category->category_name = $request->category_name;
+            $category->users_id = Auth::user()->id;
+    
+            $category->save();
+    
+            return redirect('/task_apps')->with('status', 'カテゴリを登録しました！');
 
         } else {
 
