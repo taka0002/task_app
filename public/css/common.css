@@ -170,6 +170,9 @@ input.date_field {
 .popup_content p {
     overflow: scroll;
 }
+.table-responsive {
+    display:table;
+}
 .show {
     display: flex;
     justify-content: center;
@@ -257,7 +260,7 @@ tbody {
     margin:0 10px;
 }
 .d-flex {
-    margin-bottom: 50px;
+    margin-bottom: 55px;
     font-size: 20px;
 }
 .pagination {
@@ -433,5 +436,11 @@ th.category_name {
     }
     #demo .form-group > div {
         display: block;
+    }
+    .table-responsive {
+        display: block;
+    }
+    .d-flex {
+        font-size: 16px;
     }
 }

@@ -314,8 +314,8 @@
         </li>
 
         <!--やること完了済みリスト-->
-        <li class="table-responsive">
-            <table class="table table_archive table-bordered table-hover table-sm">
+        <li>
+            <table class="table table_archive table-bordered table-hover table-sm table-responsive">
                 <tr class="thead-light">
                     <th class="text-nowrap col-6">やったこと</th>
                     <th class="text-nowrap hidden">詳細</th>
