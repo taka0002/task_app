@@ -36,7 +36,7 @@ class Task_appController extends Controller
         }
         $category_name = $request->category_view;
 
-        $task_apps_archive = \App\taks_apps_archive::all()->where('users_id',Auth::user()->id);
+        $task_apps_archive = \App\taks_apps_archive::where('users_id',Auth::user()->id)->paginate(10);
 
         $categories = \App\category::all()->where('users_id',Auth::user()->id);
 

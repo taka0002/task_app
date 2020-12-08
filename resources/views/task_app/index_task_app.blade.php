@@ -87,7 +87,7 @@
     <!--タブ-->
     <ul class="tab clearfix">
         <li class="active">未完了リスト</li>
-        <li>完了済みリスト</li>
+        <li class="page">完了済みリスト</li>
     </ul>
 
     <!--カテゴリを絞って表示-->
@@ -310,6 +310,7 @@
                     <p class="no_list">リストがありません。</p>
                 @endforelse
             </table>
+
         </li>
 
         <!--やること完了済みリスト-->
@@ -357,6 +358,11 @@
                 <p class="no_list">リストがありません。</p>
             @endforelse
             </table>
+
+            <div class="d-flex justify-content-center">
+                    {{ $task_apps_archive->links() }}
+            </div>
+
         </li>
     </ul>
 </div>
