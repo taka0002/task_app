@@ -98,6 +98,12 @@ th, td {
     border-radius: 5px;
     padding: 0 10px 3px;
 }
+table.table {
+    margin-bottom: 50px;
+}
+table.table_archive {
+    margin-bottom: 16px;
+}
 .table-bordered td {
     vertical-align: middle;
 }
