@@ -337,6 +337,14 @@ ul.tab li {
 th.category_name {
     width:90%;
 }
+.text_description textarea {
+    width:100%;
+    background:transparent;
+    border: none;
+}
+.change_description {
+    margin-top:10px;
+}
 
 @media screen and (max-width: 767px) {
     .empty {

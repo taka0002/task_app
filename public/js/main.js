@@ -15,11 +15,8 @@ $(function(){
         if(!$(this).hasClass('on')){
             $(this).addClass('on');
             var txt = $(this).text();
-            $(this).html('<input type="text" name="description" value="'+txt+'" class="remark_field form-control" />');
-            $('div.text_description > input').focus().blur(function(){
-            var inputVal = $(this).val();
-            //編集が終わったらtextで置き換える
-            $(this).parent().removeClass('on').text(inputVal);
+            $(this).html('<textarea name="description" value="'+txt+'" class="remark_field form-control">'+txt+'</textarea><input type="submit" class="btn btn-primary change_description" value="変更">');
+            $('div.text_description > textarea').focus().blur(function(){
             });
         };
     });
@@ -72,10 +69,6 @@ $(function(){
     });
 
     $(".text").change(function(){
-        $("#submit_form").submit();
-    });
-
-    $(".text_description").change(function(){
         $("#submit_form").submit();
     });
 
