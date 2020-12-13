@@ -156,8 +156,8 @@
                         <th class="text-nowrap">取り消し</th>
                         <th class="text-nowrap">終わったら</th>
                     </tr>
-                @forelse($task_apps as $task_app)
                     <!--やること一覧-->
+                @forelse($task_apps as $task_app)
                     <tr class="pop">
 
                         <!--やること名称-->
@@ -198,7 +198,7 @@
                                         {{ method_field('PATCH') }}
                                         <input type="hidden" name="id" value="{{ $task_app->id }}">
                                         <input type="hidden" name="sql_kind" value="update_text_description">
-                                        <div class="text_description">{{ $task_app->description }}</div>
+                                        <div class="text_description"><textarea class="auto-resize">{{ $task_app->description }}</textarea></div>
                                     </form>
                                     <button class="back btn btn-primary">閉じる</button>
                                 </div>
